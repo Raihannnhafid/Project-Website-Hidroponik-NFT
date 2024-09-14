@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Monitoring dan Kontrol Nutrisi</title>
+</head>
+
+<body>
+
+    <!--Navbar-->
+
+    <nav class="navbar navbar-expand-lg bg-light navbar-light fix-top py-3">
+
+        <div class="container">
+            <a href="#" class="navbar-brand"> Dasboard Monitoring dan Kontrol</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="" class="nav-link">Service</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Header -->
+
+    <section class="header bg-light text-center text-sm-start pt-10 pb-5 pb-lg-0 mt-10">
+        <div class="container">
+            <div class="d-flex align-items-center">
+                <div>
+                    <h1>Website Monitoring dan Kontrol Nutrisi Berbasis IoT
+                    </h1>
+                    <p class="lead">
+                        Sebuah website yang bisa digunakan untuk monitoring dan kontrol untuk nutrisi bagi tumbuhan
+                        hidroponik NFT di BSIP Agroklimat dan Hidrologi Pertanian
+                    </p>
+                </div>
+                <img class="img-fluid w-50 d-none d-sm-block" src="images/header.svg" alt="header">
+            </div>
+        </div>
+    </section>
+
+    <!--Monitoring-->
+
+    <section class="p-5" id="monitoring">
+        <div class="container">
+            <div class="row text-center g-4">
+                <div class="col-md">
+                    <div class="card bg-light text-dark border">
+                        <img src="images/pH.svg" class="p-2 card-img-top" alt="...">
+                        <div class="card-body from">
+                            <h5 class="card-title">pH</h5>
+                            <a href="#" class="btn btn-primary" style="margin-bottom: 10px;" data-button="ambilPH"
+                                id="dataPh">Dapatkan Data</a>
+                            <script src="dist/sweetalert2.all.min.js"></script>
+                            <script>
+                                const dataPh = document.getElementById('dataPh');
+                                dataPh.addEventListener('click', function () {
+                                    Swal.fire({
+                                        position: 'top-end', icon: 'success', title: 'Berhasil Menampilkan Nilai Sensor Ph',
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    })
+                                });
+                            </script>
+                            <div class="card"
+                                style="width: center; display: flex; align-items: center; justify-content: center;">
+                                <div data-firebase="hasilPH" class="result card-body sty" style="text-align: center;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="card bg-light text-dark border">
+                        <img src="images/PPM.svg" class="p-2 card-img-top" alt="...">
+                        <div class="card-body from">
+                            <h5 class="card-title">PPM</h5>
+                            <a href="#" class="btn btn-primary" style="margin-bottom: 10px;" data-button="ambilPPM"
+                                id="dataPPM">Dapatkan Data</a>
+                            <script src="dist/sweetalert2.all.min.js"></script>
+                            <script>
+                                const dataPPM = document.getElementById('dataPPM');
+                                dataPPM.addEventListener('click', function () {
+                                    Swal.fire({
+                                        position: 'top-end', icon: 'success', title: 'Berhasil Menampilkan Nilai Sensor PPM',
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    })
+                                });
+                            </script>
+                            <div class="card"
+                                style="width: center; display: flex; align-items: center; justify-content: center;">
+                                <div data-firebase="hasilPPM" class="result card-body sty" style="text-align: center;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Kontrol-->
+
+    <section class="bg-primary text-light p-5" id="kontrol">
+        <div class="container">
+            <div class=" justify-content-between align-items-center">
+                <h3 class="text-center">Kontrol PPM</h3>
+                <div class="input-group ">
+                    <input type="text" class="form-control" placeholder="Masukan Nilai Batas Nutrisi"
+                        data-input="batas_nutrisi">
+                    <button data-button="submitPPM" class="btn btn-dark btn-lg" type="button"
+                        id="btnPPM">Submit</button>
+                    <script src="dist/sweetalert2.all.min.js"></script>
+                    <script>
+                        const btnPPM = document.getElementById('btnPPM');
+                        btnPPM.addEventListener('click', function () {
+                            Swal.fire({
+                                position: 'top-end', icon: 'success', title: 'Nilai Batas Nutrisi Berhasil di Update',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                        });
+                    </script>
+                </div>
+            </div>
+
+            <div class=" justify-content-between align-items-center">
+                <h3 class="text-center">Kontrol pH Up</h3>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Masukan Nilai Batas pH Up"
+                        data-input="maksimum_ph">
+                    <button data-button="submitmaksimum_ph" class="btn btn-dark btn-lg" type="button"
+                        id="btnPhMax">Submit</button>
+                    <script src="dist/sweetalert2.all.min.js"></script>
+                    <script>
+                        const btnPhMax = document.getElementById('btnPhMax');
+                        btnPhMax.addEventListener('click', function () {
+                            Swal.fire({
+                                position: 'top-end', icon: 'success', title: 'Nilai Batas pH Up Berhasil di Update',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                        });
+                    </script>
+                </div>
+            </div>
+
+            <div class="justify-content-between align-items-center">
+                <h3 class="text-center">Kontrol pH Down</h3>
+                <div class="cardKontrol input-group">
+                    <input type="text" class="form-control" placeholder="Masukan Nilai Batas pH Down"
+                        data-input="minimum_ph">
+                    <button data-button="submitminimum_ph" class="btn btn-dark btn-lg" type="button"
+                        id="btnPhMin">Submit</button>
+                    <script src="dist/sweetalert2.all.min.js"></script>
+                    <script>
+                        const btnPhMin = document.getElementById('btnPhMin');
+                        btnPhMin.addEventListener('click', function () {
+                            Swal.fire({
+                                position: 'top-end', icon: 'success', title: 'Nilai Batas pH Down Berhasil di Update',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Status Pompa-->
+
+    <section class="p-5" id="status_pompa">
+        <div class="container-container">
+            <div class="row justify-content-center">
+                <div class="card1 col-md-auto">
+                    <h2>Pump Nutrisi A</h2>
+                    <div id="pump_nutrisiA-container" class="red"></div>
+                </div>
+                <div class="card2 col-md-auto">
+                    <h2>Pump Nutrisi B</h2>
+                    <div id="pump_nutrisiB-container" class="red"></div>
+                </div>
+                <div class="card3 col-md-auto">
+                    <h2>Pump pH Down</h2>
+                    <div id="pump_phdown-container" class="red"></div>
+                </div>
+                <div class="card4 col-md-auto">
+                    <h2>Pump pH Up</h2>
+                    <div id="pump_phup-container" class="red"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Google Sheet-->
+    <section id="data">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="card bg-light text-center border">
+                        <img src="images/Database logo.svg" class="p-2 card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Perubahan data akan tersimpan secara realtime,untuk melihatnya bisa
+                                klik button "Melihat Data" </p>
+                            <a href="https://docs.google.com/spreadsheets/d/1JSx-F7qy48P8PGrilI-D4JR216btDrJDB00VQrqDyXY/edit?usp=sharing"
+                                class="btn btn-primary" target="_blank">Melihat Data</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Us-->
+
+    <section class="p-5" id="contact">
+        <div class="container">
+            <div class="row g-3 align-items-center">
+                <div class="col-md">
+                    <h2 class="text-center mb-4">Contact Us</h2>
+                    <ul class="list-group list-group-flush
+                                    " lead>
+                        <li class="list-group-item">
+                            <i class="bi bi-geo-fill"></i>
+                            <span class="fw-bold">Lokasi :</span>
+                            Jalan Tentara Pelajar No.1A, Ciwaringin, Bogor Tengah, RT.07/RW.15, Menteng, Kec. Bogor
+                            Bar., Kota Bogor, Jawa Barat 16111
+                        </li>
+
+                        <li class="list-group-item">
+                            <i class="bi bi-telephone-fill"></i>
+                            <span class="fw-bold">Koordinator Laboratorium :</span>
+                            R. Iman Muhardiono, MPSDA (+62) 787-111-1661
+                        </li>
+
+                        <li class="list-group-item">
+                            <i class="bi bi-envelope-fill"></i>
+                            <span class="fw-bold">Email :</span>
+                            infobsip@pertanian.go.id
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md">
+                    <img class="img-fluid d-none d-lg-block" src="images/contact.svg" alt="header">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+
+    <!--FIREBASE WAJIB-->
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app-compat.js"></script>
+
+    <!-- FIREBASE PILIHAN -->
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-database-compat.js"></script>
+
+    <script src="./scripts/firebase-config.js"></script>
+    <script src="./scripts/script.js"></script>
+
+
+</body>
+
+</html>

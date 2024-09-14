@@ -1,0 +1,78 @@
+#services img 
+{
+    height: 10px;
+}
+
+.card-container {
+    display: flex;
+}
+
+.card1 {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    display: flex; /* Menambahkan display flex */
+    flex-direction: column; /* Mengatur tata letak menjadi kolom */
+    align-items: center; /* Memusatkan vertikal */
+}
+.card2 {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    display: flex; /* Menambahkan display flex */
+    flex-direction: column; /* Mengatur tata letak menjadi kolom */
+    align-items: center; /* Memusatkan vertikal */
+}
+.card3 {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    display: flex; /* Menambahkan display flex */
+    flex-direction: column; /* Mengatur tata letak menjadi kolom */
+    align-items: center; /* Memusatkan vertikal */
+}
+.card4 {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    display: flex; /* Menambahkan display flex */
+    flex-direction: column; /* Mengatur tata letak menjadi kolom */
+    align-items: center; /* Memusatkan vertikal */
+}
+/* CSS untuk indikator warna */
+.red {
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    width: 50px;
+    height: 20px;
+    display: flex; /* Menambahkan display flex */
+    flex-direction: column; /* Mengatur tata letak menjadi kolom */
+    align-items: center; /* Memusatkan vertikal */
+
+}
+.green {
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    width: 50px;
+    height: 20px;
+    display: flex; /* Menambahkan display flex */
+    flex-direction: column; /* Mengatur tata letak menjadi kolom */
+    align-items: center; /* Memusatkan vertikal */
+}
+
+
+  
